@@ -2,10 +2,10 @@
 
 점점 사라져가는 옛날 전통문화를 설명해주는 느낌으로 팀명을 '라떼제주'로 정했습니다.
 
--  고동협 / @user21273104 / 팀장
--  김승헌 / @seongheonkim4
--  이기정 / @user 28874005 
--  하정호 / @user01109859 
+-  고동협 / https://github.com/kodonghyup / 팀장
+-  김승헌 / https://github.com/samuelzaza999
+-  이기정 / https://github.com/leekijeong 
+-  하정호 / https://github.com/hjh1248 
 
 ---
 ### 목표 및 활동계획
