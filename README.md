@@ -1,14 +1,14 @@
-###Latte Jeju
+### Latte Jeju
 
 점점 사라져가는 옛날 전통문화를 설명해주는 느낌으로 팀명을 '라떼제주'로 정했습니다.
 
-
-###목표 및 활동계획
+---
+### 목표 및 활동계획
 
 제주의 전통문화를 정리한 어플이 없고 점점 사라져 가는 전통문화를 보존하기에 조금이나마 도움이 되고자 제주의 전통문화를 정리하여 어플을 만들기로 하였습니다.
 
-
-###OPEN API,OPEN SOURCE
+---
+### OPEN API,OPEN SOURCE
 
 제주 생활 방언: https://www.jeju.go.kr/help/open.htm?qType=title&q=B&act=view&seq=957915
 
