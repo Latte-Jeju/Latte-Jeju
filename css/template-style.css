@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
 body {
     background: none repeat scroll 0 0 #252D30;
 }
 .logo-box {
-    background: none repeat scroll 0 0 #252D30;
+    background: none repeat scroll 0 0 #b4bf04;
     display: block;
     padding: 1.25em;
     width: 100%;
@@ -10,13 +12,13 @@ body {
 }
 h1 {
     color: #FFFFFF;
-    font-family: impact,tahoma;
+    font-family: 'Jeju Hallasan', serif;
     font-size: 1.5em;
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 .aside-nav ul {
-    background: none repeat scroll 0 0 #252D30;
+    background: none repeat scroll 0 0 #b4bf04;
 }
 .aside-nav li a {
     border-bottom: 1px solid #151E1F;
