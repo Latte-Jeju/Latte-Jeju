@@ -14,6 +14,37 @@
       <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
    </head>
    <body class="size-1140 align-content-left">
+      <script>
+         $('#test').css('border', '1px solid blue')
+         $.ajax({
+             url: "http://122.202.153.202:8000/jeju/3/2",
+             type: 'GET',
+             dataType: 'json',
+             contentType: "application/json",
+             
+             success:function(result){
+                 if (result){
+ 
+                 } else{
+                     alert("다시시도");
+                 }
+             },
+             
+              // 클라이언트가 요청을 보낼 서버의 URL 주소
+                 // HTTP 요청과 함께 서버로 보낼 데이터
+                                      // HTTP 요청 방식(GET, POST)
+                // 서버에서 보내줄 데이터의 타입
+         })
+         .done(function(msg){
+             // HTTP 요청이 성공하면 요청한 데이터가 done() 메소드로 전달됨.
+             console.log(msg);
+             console.log(msg.jejunetApi.list.item[0].contents)
+             $("div").append(msg.jejunetApi.list.item[0].contents);
+           //document.getElementById("test").innerHTML = '출력';
+         })
+ 
+         
+     </script>
       <div class="line">
          <div id="content-wrapper">
             <!-- LEFT COLUMN -->
