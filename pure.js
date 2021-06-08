@@ -11,7 +11,7 @@ var b=0;
 
 function forjson(){
 
-$.getJSON("pure-css-card-w-social-icons/dist/제주사진정보.json", function(json) 
+$.getJSON("제주사진정보.json", function(json) 
 {
   $("section *").remove();
   // this will show the info it in firebug console
