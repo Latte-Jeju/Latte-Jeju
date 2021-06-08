@@ -3,17 +3,30 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>제주도 박물관</title>
+    <style>
+
+    body{
+      margin: 0px;
+    }
+
+    #map{
+      width:100vw; height: 100vh; min-height:500px;
+    }
+
+    </style>
 
 </head>
 
 <body>
-    <div id="map" style="width:60%;height:700px;"></div>
+    <div id="map"></div>
 
     <script type="text/javascript"
         src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=917ffd69954a74f9ca0075edfd048f8f"></script>
     <script>
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
             mapOption = {
                 center: new kakao.maps.LatLng(33.37136548253273, 126.55186937155597), // 지도의 중심좌표
                 level: 9 // 지도의 확대 레벨
@@ -29,7 +42,7 @@
         // 지도의 우측에 확대 축소 컨트롤을 추가한다
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-        // 마커를 표시할 위치와 title 객체 배열입니다 
+        // 마커를 표시할 위치와 title 객체 배열입니다
         var positions = [
             {
                 title: '제주민속박물관',
@@ -77,7 +90,7 @@
             // 마커 이미지의 이미지 크기 입니다
             var imageSize = new kakao.maps.Size(24, 35);
 
-            // 마커 이미지를 생성합니다    
+            // 마커 이미지를 생성합니다
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
             // 마커를 생성합니다
@@ -85,7 +98,7 @@
                 map: map, // 마커를 표시할 지도
                 position: positions[i].latlng, // 마커를 표시할 위치
                 title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                image: markerImage // 마커 이미지 
+                image: markerImage // 마커 이미지
             });
 
             // 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
