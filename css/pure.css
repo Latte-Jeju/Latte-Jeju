@@ -1,22 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
 
-h1 {
-  text-align: center;
-  font-family: 'Bowlby One SC', cursive;
-  width: 320px;
-  height: 320px;
-  background: pink;
-  margin: 0 auto;
-}
 body{
     margin: 0;
   }
   
   .flex {
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: #1d1f20;
   }
   
   .wrap {
@@ -51,14 +40,15 @@ body{
   }
   
   .front {
-    background-color: #f00b9a;
+    
     transform: rotateY(0deg);
   }
   
   .back {
-    background-color: #00e1b5;
+    background-color: white;
     transform: rotateY(-180deg);
     text-align: center;
     font-size: 2vmin;
+    color :black;
     
   }

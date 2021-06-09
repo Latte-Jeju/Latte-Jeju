@@ -9,21 +9,36 @@ function escapeHtml(unsafe) {
 var b=0;
 
 
-function forjson(){
 
-$.getJSON("제주사진정보.json", function(json) 
-{
+  
+function test(callback){
+  $.getJSON("제주사진정보.json", function(json) {
+    callback(json);
+  });
+}
+
+function forjson(){
+  test(function (json) {
+    
+  console.log(json);
+  
   $("section *").remove();
   // this will show the info it in firebug console
   var section = document.querySelector('section');
-  
-  
+
+  classification={}
   for(var i=b; i<b+3;i++)
   {
     
     
   // li 노드 생성
     a=json[0][i];
+   // "classification": "nature",
+    //if (a.subClassification != "earth"){
+    
+  
+    
+    
     var kdiv = document.createElement('div');
     var frontdiv= document.createElement('IMG');
     var backdiv = document.createElement('div');
@@ -55,18 +70,21 @@ $.getJSON("제주사진정보.json", function(json)
     section.appendChild(kdiv);
      
   };
+
   b+=3;
   console.log(b);
 
-
-  
-  
-
-
-
-  
 });
 }
+
+
+  
+  
+
+
+
+  
+
 function calcRectArea(width, height) {
   return width * height;
 }
