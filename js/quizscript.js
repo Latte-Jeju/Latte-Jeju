@@ -1,54 +1,62 @@
-$('#quiz').quiz({
+$.getJSON("제주속담사전.json", function(json) {
+ 
   
-  
+  $('#quiz').quiz({
+    
+ 
   //resultsScreen: '#results-screen',
   //counter: false,
   //homeButton: '#custom-home',
+  
+
   counterFormat: 'Question %current of %total',
   questions: [
     {
-      'q': 'Is jQuery required for this plugin?',
+      'q': '1. 제주 사투리 ‘하르방’의 뜻은 무엇인가요?',
       'options': [
-        'Yes',
-        'No'
+        '할아버지',
+        '할머니',
+        '아저씨',
+        '아줌마'
+        
       ],
       'correctIndex': 0,
-      'correctResponse': 'Good job, that was obvious.',
-      'incorrectResponse': 'Well, if you don\'t include it, your quiz won\'t work'
+      'correctResponse': '정답',
+      'incorrectResponse': '..'
     },
     {
-      'q': 'How do you use it?',
+      'q': '‘많이’라는 뜻을 가지고 있는 제주 사투리는 무엇인가요? ',
       'options': [
-        'Include jQuery, that\'s it!',
-        'Include jQuery and the plugin javascript.',
-        'Include jQuery, the plugin javascript, the optional plugin css, required markup, and the javascript configuration.'
+        '이영',
+        '우영',
+        '하영'
       ],
       'correctIndex': 2,
-      'correctResponse': 'Correct! Sounds more complicated than it really is.',
-      'incorrectResponse': 'Come on, it\'s not that easy!'
+      'correctResponse': '정답',
+      'incorrectResponse': '..'
     },
     {
-      'q': 'The plugin can be configured to require a perfect score.',
+      'q': '제주도 인사 중 하나인 ‘혼저 옵서’에서 혼저의 뜻은 무엇인가요?',
       'options': [
-        'True',
-        'False'
+        '어서',
+        '아서'
       ],
       'correctIndex': 0,
-      'correctResponse': 'You\'re a genius! You just set allowIncorrect to true.',
-      'incorrectResponse': 'Why you have no faith!? Just set allowIncorrect to true.'
+      'correctResponse': '정답',
+      'incorrectResponse': '..'
     },
     {
-      'q': 'How do you specify the questions and answers?',
+      'q': '제주 사투리 ‘도새기’ 의 뜻은 무엇인가요?',
       'options': [
-        'MySQL database',
-        'In the HTML',
-        'In the javascript configuration'
+        '파새기',
+        '돼지',
+        '소'
       ],
-      'correctIndex': 2,
-      'correctResponse': 'Correct! Refer to the documentation for the structure.',
-      'incorrectResponse': 'Wrong! Do it in the javascript configuration. You might need to read the documentation.'
+      'correctIndex': 1,
+      'correctResponse': '정답',
+      'incorrectResponse': '..'
     }
   ]
 });
-
+});
  

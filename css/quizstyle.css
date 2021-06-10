@@ -15,11 +15,13 @@ h1 {
     padding: 0.25em;
     max-width: 650px;
     margin: 1em auto;
+    color: black;
 }
 
 .quiz-container a {
     text-decoration: none;
     color: #333;
+    border: 1px solid green;
 }
 
 #quiz-header,
