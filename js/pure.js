@@ -24,7 +24,8 @@ function forjson(){
   
   $("section *").remove();
   // this will show the info it in firebug console
-  var section = document.querySelector('section');
+  //var section = document.querySelector('section');
+  var margin = document.getElementsByClassName("margin");
 
   classification={}
   for(var i=b; i<b+3;i++)
@@ -42,6 +43,7 @@ function forjson(){
     var kdiv = document.createElement('div');
     var frontdiv= document.createElement('IMG');
     var backdiv = document.createElement('div');
+    var section = document.createElement('section');
       
   
     
@@ -57,6 +59,7 @@ function forjson(){
     kdiv.className = 'wrap'
     frontdiv.className ="card front"
     backdiv.className = "card back"
+    margin.className='margin'
     
     backdiv.textContent=a.title
     //backdiv.textContent=escapeHtml(a.contents)
@@ -68,6 +71,7 @@ function forjson(){
     kdiv.appendChild(backdiv);
     kdiv.appendChild(frontdiv);
     section.appendChild(kdiv);
+    margin.appendChild(section)
      
   };
 
