@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+
+body{
+    margin: 0;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .wrap {
+    position: relative;
+    width: 240px;
+    height: 360px;
+    margin: auto;
+  }
+  
+  .card {
+    flex-wrap:wrap;
+    position: absolute;
+    width: 240px;
+    height: 360px;
+    color: #fff;
+    font-size: 32px;
+    font-family: sans-serif;
+    transition: .3s ease all;
+    backface-visibility: hidden;
+    display: flex;
+    box-shadow: 3px 3px 10px #333;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wrap:hover .front {
+    transform: rotateY(-180deg);
+  }
+  
+  .wrap:hover .back {
+    transform: rotateY(0deg);
+  }
+  
+  .front {
+    
+    transform: rotateY(0deg);
+  }
+  
+  .back {
+    background-color: white;
+    transform: rotateY(-180deg);
+    text-align: center;
+    font-size: 2vmin;
+    color :black;
+    
+  }
