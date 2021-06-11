@@ -46,39 +46,49 @@
         var positions = [
             {
                 title: '제주민속박물관',
-                latlng: new kakao.maps.LatLng(33.450701, 126.570667)
+                latlng: new kakao.maps.LatLng(33.450701, 126.570667),
+                message: '<div style="padding:5px;">제주교육asdf박물관</div>'
             },
             {
                 title: '제주해녀박물관',
-                latlng: new kakao.maps.LatLng(33.523775417761726, 126.86355037125084)
+                latlng: new kakao.maps.LatLng(33.523775417761726, 126.86355037125084),
+                message: '<div style="padding:5px;">제주교ghd육박물관</div>'
             },
             {
                 title: '국립제주박물관',
-                latlng: new kakao.maps.LatLng(33.51356277825895, 126.54895859815414)
+                latlng: new kakao.maps.LatLng(33.51356277825895, 126.54895859815414),
+                message: '<div style="padding:5px;">제주교육gfda박물관</div>'
             },
             {
                 title: '감귤박물관',
-                latlng: new kakao.maps.LatLng(33.271667103374355, 126.60774622884105)
+                latlng: new kakao.maps.LatLng(33.271667103374355, 126.60774622884105),
+                message: '<div style="padding:5px;">제주asdf교육박물관</div>'
             },
             {
                 title: '돌박물관',
-                latlng: new kakao.maps.LatLng(33.45604858987012, 126.66162590905417)
+                latlng: new kakao.maps.LatLng(33.45604858987012, 126.66162590905417),
+                message: '<div style="padding:5px;">제주교adsf육박물관</div>'
             },
             {
                 title: '화석박물관',
-                latlng: new kakao.maps.LatLng(33.35067980353928, 126.8422317030885)
+                latlng: new kakao.maps.LatLng(33.35067980353928, 126.8422317030885),
+                message: '<div style="padding:5px;">제주교asdf육박물관</div>'
             },
             {
                 title: '평화박물관',
-                latlng: new kakao.maps.LatLng(33.30593218087981, 126.2492554054135)
+                latlng: new kakao.maps.LatLng(33.30593218087981, 126.2492554054135),
+                message: '<div style="padding:5px;">제주asdf교육박물관</div>'
+
             },
             {
                 title: '제주도립박물관',
-                latlng: new kakao.maps.LatLng(33.45275770191892, 126.48956438280749)
+                latlng: new kakao.maps.LatLng(33.45275770191892, 126.48956438280749),
+                message: '<div style="padding:5px;">dfd관</div>'
             },
             {
                 title: '제주교육박물관',
-                latlng: new kakao.maps.LatLng(33.4948388128112, 126.5378917251353)
+                latlng: new kakao.maps.LatLng(33.4948388128112, 126.5378917251353),
+                message: '<div style="padding:5px;">dsf물관</div>'
             }
         ];
 
@@ -101,10 +111,34 @@
                 image: markerImage // 마커 이미지
             });
 
+            // 마커를 지도에 표시합니다.
+            marker.setMap(map);
+
+            // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+            var iwContent = positions[i].message; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+            // 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+              content : iwContent
+            });
+
+            // 마커에 마우스오버 이벤트를 등록합니다
+            kakao.maps.event.addListener(marker, 'mouseover', function() {
+              // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+              infowindow.open(map, marker);
+            });
+
+            // 마커에 마우스아웃 이벤트를 등록합니다
+            kakao.maps.event.addListener(marker, 'mouseout', function() {
+              // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+              infowindow.close();
+            });
+
             // 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
             kakao.maps.event.addListener(marker, 'click', function () {
                 alert('마커를 클릭했습니다!');
             });
+
         }
 
     </script>
