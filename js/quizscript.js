@@ -1,5 +1,5 @@
-$.getJSON("제주속담사전.json", function(json) {
- 
+$.getJSON("./제주속담사전.json", function(json) {
+ console.log(json)
   
   $('#quiz').quiz({
     
