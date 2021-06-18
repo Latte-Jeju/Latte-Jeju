@@ -12,7 +12,7 @@ var b=0;
 
   
 function test(callback){
-  $.getJSON("./제주사진정보.json", function(json) {
+  $.getJSON("./제주자연사진.json", function(json) {
     callback(json);
   });
 }

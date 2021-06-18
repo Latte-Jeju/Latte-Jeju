@@ -31,6 +31,7 @@
                            <li><a href="galleryMin_1.html">삼다 문화</a></li>
                            <li><a href="galleryMin_2.html">제주 민요</a></li>
                            <li><a href="pure.html">제주 이미지</a></li>
+                           <li><a href="museum.html">박물관</a></li>
                         </ul>
                      </li>
                      <li>
@@ -68,9 +69,25 @@
                   <!-- HEADER -->     
                   <div class="line">
                      <section>
+
                         <div class="margin">
                            <table>
                               <thead>
+
+                        <div class="margin" id="data-container"> <!-- 실행 문제? -->
+                           <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
+                           <!-- api 받은 뒤 내용 수정 -->
+                           
+                        
+                           <!--
+                           <div class="s-12 m-12 l-6 margin-bottom">
+                              <img class="full-img" src="img/gallery-1.svg" alt="">
+                           </div>
+                           -->
+
+                           <table> 
+                              <thead> 
+
                                  <tr> 
                                     <td>number</td> 
                                     <td>name</td> 
@@ -85,6 +102,7 @@
                                     <td>contents</td> 
                                     <td>image</td> 
                                  </tr> 
+
                               </tfoot>
                               <tbody>
                                  <tr>
@@ -94,6 +112,17 @@
                                     <td class="image"></td>
                                  </tr>
                               </tbody>
+
+                              </tfoot> 
+                              <tbody>
+                                 <tr> 
+                                    <td class="num"></td> 
+                                    <td class="name"></td> 
+                                    <td class="contents"></td> 
+                                    <td class="image"></td> 
+                                 </tr> 
+                              </tbody> 
+
                            </table>
                         </div>
                      </section>
@@ -117,6 +146,7 @@
       <script type="text/javascript" src="js/responsee.js"></script>  
       <script>
          function test(callback){
+
             $.getJSON("./제주생활방언.json", function(json) {
                callback(json);
             });
@@ -152,5 +182,44 @@
             } 
          });
       </script>
+
+  $.getJSON("./제주자연사진.json", function(json) {
+    callback(json);
+  });
+}
+test(function (json){
+               for(i=0;i<10;i++) { 
+                  console.log(json[0][i])
+                  let tr = document.createElement('tr'); 
+                  let tnum = document.createElement('td');
+                  let tname = document.createElement('td');
+                  let tcontents = document.createElement('td'); 
+                  let timage = document.createElement('IMG'); 
+
+                  tnum.className="num"
+                  tname.className = 'name'
+                  tcontents.className ="contents"
+                  timage.className = "image"
+                  tnum.innerHTML = i;
+                  tname.innerHTML = json[0][i]["title"];
+                  tcontents.innerHTML=json[0][i]["contents"];
+                  //timage.innerHTML =json[0][i]["image"];
+
+                  
+                  timage.setAttribute("src","http://www.jeju.go.kr"+json[0][i]["dataImageUrl"]); // b에다가 image url 담을예정
+                  timage.setAttribute("width", "304");
+                  timage.setAttribute("height", "228");
+                  
+                  tr.appendChild(tnum);
+                  tr.appendChild(tname);
+                  tr.appendChild(tcontents);
+                  tr.appendChild(timage);
+   
+                  document.querySelector("tbody").appendChild(tr); 
+               } 
+            });
+          
+         </script>
+
    </body>
 </html>
