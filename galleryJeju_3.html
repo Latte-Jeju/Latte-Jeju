@@ -68,36 +68,29 @@
                   <div class="line">
                      <section>
                         <div class="margin">
-                           <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
-                           <!-- api 받은 뒤 내용 수정 -->
-                           
-                           <li>
-	                           <div class="col-md-4 col-xs-12"><img alt="정당모자 이미지" class="img-responsive mCenter" src="/media/rx"></div>
-	                           <div class="col-md-8 col-xs-12 text-justfy">
-	                              <dl class="cul-dl-st01">
-		                              <dt>정당모자 : 댕댕이 줄기로 만든 모자</dt>
-		                              <dd>야산에서 자생하는 댕댕이 줄기로 만든 모자로서 모자골은 사용자의 머리에 맞게 하고, 갓은 비교적 넓어서 해가림이 많이 되도록 하였다. 주로 목자나 농부들이 사용하였다.</dd>
-	                              </dl>
-	                           </div>
-	                        </li>
-
-                           <li>
-                              <div class="col-md-4 col-xs-12"><img alt="물옷이미지" class="img-responsive mCenter" src="/media/rc"></div>
-                              <div class="col-md-8 col-xs-12 text-justfy">
-                                 <dl class="cul-dl-st01">
-                                    <dt>물옷 : 제주 해녀들이 입던 옷</dt>
-                                    <dd>1970년대 초기 일본에서 검은 고무옷이 들어오기 이전에 제주해녀들이 입던 해녀옷이다. 해녀옷은 상의를 물적삼, 하의를 소중이, 머리에쓴 물수건을 포함한다. 해녀옷에는 제주여인의 근면성과 편리성과 합리성을 느낄 수 있다.<br>
-                                    <small>※ 해녀복 → 물옷 (민속연구원 김동섭)</small></dd>
-                                 </dl>
-                              </div>
-                           </li>
-                           
-                           <!--
-                           <div class="s-12 m-12 l-6 margin-bottom">
-                              <img class="full-img" src="img/gallery-1.svg" alt="">
-                           </div>
-                           -->
-
+                           <table>
+                              <thead>
+                                 <tr> 
+                                    <td>number</td> 
+                                    <td>name</td> 
+                                    <td>contents</td> 
+                                 </tr> 
+                              </thead>
+                              <tfoot>
+                                 <tr> 
+                                    <td>number</td> 
+                                    <td>name</td> 
+                                    <td>contents</td> 
+                                 </tr> 
+                              </tfoot>
+                              <tbody>
+                                 <tr>
+                                    <td class="num"></td>
+                                    <td class="name"></td>
+                                    <td class="contents"></td>
+                                 </tr>
+                              </tbody>
+                           </table>
                         </div>
                      </section>
                   </div>
@@ -117,6 +110,35 @@
          </div>
       </div>
       <img id="background" class="hide-s" src="img/background.jpg" alt=""> 
-      <script type="text/javascript" src="js/responsee.js"></script>  
+      <script type="text/javascript" src="js/responsee.js"></script>
+      <script>
+         function test(callback){
+            $.getJSON("./제주생활방언.json", function(json) {
+               callback(json);
+            });
+         }
+         test(function (json){
+            for(i=0;i<10;i++) { 
+               console.log(json[0][i])
+               let tr = document.createElement('tr'); 
+               let tnum = document.createElement('td');
+               let tname = document.createElement('td');
+               let tcontents = document.createElement('td'); 
+
+               tnum.className="num"
+               tname.className = 'name'
+               tcontents.className ="contents"
+               tnum.innerHTML = i;
+               tname.innerHTML = json[0][i]["name"];
+               tcontents.innerHTML=json[0][i]["contents"];
+
+               tr.appendChild(tnum);
+               tr.appendChild(tname);
+               tr.appendChild(tcontents);
+   
+               document.querySelector("tbody").appendChild(tr); 
+            } 
+         });
+      </script>
    </body>
 </html>
