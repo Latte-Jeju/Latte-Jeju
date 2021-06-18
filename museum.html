@@ -3,19 +3,67 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>제주도 박물관</title>
+    <title>Latte-Jeju Map</title>
     <style>
+        body {
+            margin: 0px;
+        }
 
-    body{
-      margin: 0px;
-    }
+        #map {
+            width: 100vw;
+            height: 100vh;
+            min-height: 500px;
+        }
 
-    #map{
-      width:100vw; height: 100vh; min-height:500px;
-    }
+        .customoverlay {
+            position: relative;
+            bottom: 85px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            border-bottom: 2px solid #ddd;
+            float: left;
+        }
 
+        .customoverlay:nth-of-type(n) {
+            border: 0;
+            box-shadow: 0px 1px 2px #888;
+        }
+
+        .customoverlay a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            background: #d95050;
+            background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;
+        }
+
+        .customoverlay .title {
+            display: block;
+            text-align: center;
+            background: #fff;
+            margin-right: 35px;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .customoverlay:after {
+            content: '';
+            position: absolute;
+            margin-left: -12px;
+            left: 50%;
+            bottom: -12px;
+            width: 22px;
+            height: 12px;
+            background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+        }
     </style>
 
 </head>
@@ -33,7 +81,6 @@
             };
 
 
-
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
         // 지도에 확대 축소 컨트롤을 생성한다
@@ -45,99 +92,345 @@
         // 마커를 표시할 위치와 title 객체 배열입니다
         var positions = [
             {
-                title: '제주민속박물관',
-                latlng: new kakao.maps.LatLng(33.450701, 126.570667),
-                message: '<div style="padding:5px;">제주교육asdf박물관</div>'
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://www.jeju.go.kr/museum/index.htm" target="_blank">' +
+                    '    <span class="title">제주민속자연사박물관</span>' +
+                    '  </a>' +
+                    '</div>',
+                title: '제주민속자연사박물관',
+                latlng: new kakao.maps.LatLng(33.506553640275285, 126.53159664048127)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://www.jeju.go.kr/haenyeo/index.htm" target="_blank">' +
+                    '    <span class="title">제주해녀박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '제주해녀박물관',
-                latlng: new kakao.maps.LatLng(33.523775417761726, 126.86355037125084),
-                message: '<div style="padding:5px;">제주교ghd육박물관</div>'
+                latlng: new kakao.maps.LatLng(33.523775417761726, 126.86355037125084)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="https://jeju.museum.go.kr/html/kr/index.html" target="_blank">' +
+                    '    <span class="title">국립제주박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '국립제주박물관',
-                latlng: new kakao.maps.LatLng(33.51356277825895, 126.54895859815414),
-                message: '<div style="padding:5px;">제주교육gfda박물관</div>'
+                latlng: new kakao.maps.LatLng(33.51356277825895, 126.54895859815414)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="https://culture.seogwipo.go.kr/citrus/index.htm" target="_blank">' +
+                    '    <span class="title">감귤박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '감귤박물관',
-                latlng: new kakao.maps.LatLng(33.271667103374355, 126.60774622884105),
-                message: '<div style="padding:5px;">제주asdf교육박물관</div>'
+                latlng: new kakao.maps.LatLng(33.271667103374355, 126.60774622884105)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://www.jeju.go.kr/jejustonepark/index.htm" target="_blank">' +
+                    '    <span class="title">제주돌문화공원</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '돌박물관',
-                latlng: new kakao.maps.LatLng(33.45604858987012, 126.66162590905417),
-                message: '<div style="padding:5px;">제주교adsf육박물관</div>'
+                latlng: new kakao.maps.LatLng(33.45604858987012, 126.66162590905417)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://www.hallasan.co.kr/bbs/board.php?bo_table=4_2_1_1&wr_id=116&sca=%EB%AA%85%EC%86%8C&mpage=" target="_blank">' +
+                    '    <span class="title">화석박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '화석박물관',
-                latlng: new kakao.maps.LatLng(33.35067980353928, 126.8422317030885),
-                message: '<div style="padding:5px;">제주교asdf육박물관</div>'
+                latlng: new kakao.maps.LatLng(33.35067980353928, 126.8422317030885)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://peace7355811.cafe24.com/default/" target="_blank">' +
+                    '    <span class="title">평화박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '평화박물관',
-                latlng: new kakao.maps.LatLng(33.30593218087981, 126.2492554054135),
-                message: '<div style="padding:5px;">제주asdf교육박물관</div>'
+                latlng: new kakao.maps.LatLng(33.30593218087981, 126.2492554054135)
 
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://jmoa.jeju.go.kr/kor/" target="_blank">' +
+                    '    <span class="title">제주도립박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '제주도립박물관',
-                latlng: new kakao.maps.LatLng(33.45275770191892, 126.48956438280749),
-                message: '<div style="padding:5px;">dfd관</div>'
+                latlng: new kakao.maps.LatLng(33.45275770191892, 126.48956438280749)
             },
             {
+                content: '<div class="customoverlay">' +
+                    '  <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500537" target="_blank">' +
+                    '    <span class="title">제주교육박물관</span>' +
+                    '  </a>' +
+                    '</div>',
                 title: '제주교육박물관',
-                latlng: new kakao.maps.LatLng(33.4948388128112, 126.5378917251353),
-                message: '<div style="padding:5px;">dsf물관</div>'
+                latlng: new kakao.maps.LatLng(33.4948388128112, 126.5378917251353)
+            },
+            {
+                content: '<div class="customoverlay">' +
+                    '  <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500351" target="_blank">' +
+                    '    <span class="title">성읍민속마을</span>' +
+                    '  </a>' +
+                    '</div>',
+                title: '성읍민속마을',
+                latlng: new kakao.maps.LatLng(33.386612250178686, 126.79975311534557)
+            },
+            {
+                content: '<div class="customoverlay">' +
+                    '  <a href="http://www.jeju.go.kr/jejuwnh/index.htm" target="_blank">' +
+                    '    <span class="title">제주세계자연유산센터</span>' +
+                    '  </a>' +
+                    '</div>',
+                title: '제주세계자연유산센터',
+                latlng: new kakao.maps.LatLng(33.45704959142818, 126.71436804048034)
             }
         ];
 
-        // 마커 이미지의 이미지 주소입니다
-        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+        // 마커를 표시할 위치와 title 객체 배열입니다
+        var positions2 = [
+            {
+                content: '만장굴',
+                latlng: new kakao.maps.LatLng(33.528718535338975, 126.77160974603667),
+
+            },
+            {
+                content: '성산일출봉',
+                latlng: new kakao.maps.LatLng(33.458807069518144, 126.94245705429185)
+            },
+            {
+                content: '천지연폭포',
+                latlng: new kakao.maps.LatLng(33.24769689615333, 126.55445988492271)
+            },
+            {
+                content: '우도',
+                latlng: new kakao.maps.LatLng(33.50451160024985, 126.95404796965063)
+            },
+            {
+                content: '협재해변',
+                latlng: new kakao.maps.LatLng(33.396102331478595, 126.24140166809602)
+            },
+            {
+                content: '한림공원',
+                latlng: new kakao.maps.LatLng(33.389715999116625, 126.23928839815193)
+            },
+            {
+                content: '중문색달해변',
+                latlng: new kakao.maps.LatLng(33.24443862661684, 126.40841331865943)
+            },
+            {
+                content: '비자림',
+                latlng: new kakao.maps.LatLng(33.48438830793082, 126.806436382808)
+            },
+            {
+                content: '마라도',
+                latlng: new kakao.maps.LatLng(33.12085194896743, 126.26716328488688)
+            },
+            {
+                content: '거문오름',
+                latlng: new kakao.maps.LatLng(33.45698394413899, 126.71433495504148)
+            },
+            {
+                content: '용머리해안',
+                latlng: new kakao.maps.LatLng(33.23199056856647, 126.31460881163999)
+            },
+            {
+                content: '곽지 해수욕장',
+                latlng: new kakao.maps.LatLng(33.450364089060365, 126.30414190184955)
+            },
+            {
+                content: '제주절물자연휴양림',
+                latlng: new kakao.maps.LatLng(33.43954286237947, 126.62943366931638)
+            },
+            {
+                content: '신화테마파크',
+                latlng: new kakao.maps.LatLng(33.30505211520246, 126.31541598465962)
+            },
+            {
+                content: '플레이케이팝테마파크',
+                latlng: new kakao.maps.LatLng(33.250071621717645, 126.41342972698578)
+            },
+            {
+                content: '신비의도로',
+                latlng: new kakao.maps.LatLng(33.45126264907135, 126.48773309629823)
+            },
+            {
+                content: '사려니숲길',
+                latlng: new kakao.maps.LatLng(33.393018361237765, 126.67228545397002)
+            },
+            {
+                content: '삼성혈',
+                latlng: new kakao.maps.LatLng(33.50437013489809, 126.52917084048106)
+            },
+            {
+                content: '제주4.3평화공원',
+                latlng: new kakao.maps.LatLng(33.451258049076486, 126.61891994048018)
+            },
+            {
+                content: '김녕미로공원',
+                latlng: new kakao.maps.LatLng(33.53574846714021, 126.74052492699094)
+            },
+            {
+                content: '이중섭거리',
+                latlng: new kakao.maps.LatLng(33.24513347408838, 126.56438178465865)
+            },
+            {
+                content: '제주민속오일시장',
+                latlng: new kakao.maps.LatLng(33.496955462413815, 126.47537214048099)
+            },
+            {
+                content: '오설록',
+                latlng: new kakao.maps.LatLng(33.30601871360634, 126.28950181164124)
+            },
+            {
+                content: '제주현대미술관',
+                latlng: new kakao.maps.LatLng(33.339778575496915, 126.26564756931458)
+            },
+            {
+                content: '박물관은 살아있다',
+                latlng: new kakao.maps.LatLng(33.25505545880507, 126.40875408465874)
+            },
+            {
+                content: '용눈이오름',
+                latlng: new kakao.maps.LatLng(33.46028901913999, 126.83156280032908)
+            },
+            {
+                content: '제주허브동산',
+                latlng: new kakao.maps.LatLng(33.32987575835592, 126.81496545582351)
+            },
+            {
+                content: '주상절리대',
+                latlng: new kakao.maps.LatLng(33.23786757258982, 126.42505586138626)
+            },
+            {
+                content: '한담해변',
+                latlng: new kakao.maps.LatLng(33.45978225280864, 126.31043533894729)
+            },
+            {
+                content: '광치기해변',
+                latlng: new kakao.maps.LatLng(33.45230617389704, 126.92473368498135)
+            },
+            {
+                content: '삼양검은모래해변',
+                latlng: new kakao.maps.LatLng(33.52581223743319, 126.58639938551015)
+            },
+            {
+                content: '제주항공우주박물관',
+                latlng: new kakao.maps.LatLng(33.304496515797915, 126.29971864047765)
+            },
+            {
+                content: '한라산',
+                latlng: new kakao.maps.LatLng(33.36209591475506, 126.52903782357315)
+            },
+            {
+                content: '아르떼뮤지엄',
+                latlng: new kakao.maps.LatLng(33.39743032407297, 126.34573252698833)
+            },
+            {
+                content: '수월봉',
+                latlng: new kakao.maps.LatLng(33.295446399441786, 126.16238389286298)
+            },
+            {
+                content: '제주공룡랜드',
+                latlng: new kakao.maps.LatLng(33.441013266163466, 126.43450944048003)
+            },
+            {
+                content: '만세동산',
+                latlng: new kakao.maps.LatLng(33.37270301715503, 126.50568147768037)
+            },
+            {
+                content: '물영아리 오름',
+                latlng: new kakao.maps.LatLng(33.37957041621582, 126.69403660877599)
+            },
+            {
+                content: '남원큰엉해안',
+                latlng: new kakao.maps.LatLng(33.279171184039406, 126.70502293723992)
+            }
+        ];
+
 
         for (var i = 0; i < positions.length; i++) {
 
-            // 마커 이미지의 이미지 크기 입니다
-            var imageSize = new kakao.maps.Size(24, 35);
 
-            // 마커 이미지를 생성합니다
-            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+            var imageSrc = 'https://commonculture.org.uk/wp-content/uploads/leaflet-maps-marker-icons/heritage.png', // 마커이미지의 주소입니다    
+
+                imageSize = new kakao.maps.Size(50, 55), // 마커이미지의 크기입니다
+
+                imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+                        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                markerPosition = positions[i].latlng; // 마커가 표시될 위치입니다
 
             // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
+            var marker1 = new kakao.maps.Marker({
                 map: map, // 마커를 표시할 지도
-                position: positions[i].latlng, // 마커를 표시할 위치
-                title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                position: markerPosition, // 마커를 표시할 위치
                 image: markerImage // 마커 이미지
             });
 
             // 마커를 지도에 표시합니다.
-            marker.setMap(map);
+            marker1.setMap(map);
+
+            // 커스텀 오버레이가 표시될 위치입니다 
+            var position = positions[i].latlng;
+
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay = new kakao.maps.CustomOverlay({
+                map: map,
+                position: position,
+                content: positions[i].content,
+                yAnchor: 1
+            });
+
+
+
+        }
+
+        for (var i = 0; i < positions2.length; i++) {
+
+
+            // 마커를 생성합니다
+            var marker2 = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: positions2[i].latlng, // 마커를 표시할 위치
+            });
+
+            // 마커를 지도에 표시합니다.
+            marker2.setMap(map);
 
             // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
-            var iwContent = positions[i].message; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent = positions2[i].message; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 
             // 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
-              content : iwContent
+                content: positions2[i].content
             });
 
-            // 마커에 마우스오버 이벤트를 등록합니다
-            kakao.maps.event.addListener(marker, 'mouseover', function() {
-              // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
-              infowindow.open(map, marker);
-            });
+            kakao.maps.event.addListener(marker2, 'mouseover', makeOverListener(map, marker2, infowindow));
+            kakao.maps.event.addListener(marker2, 'mouseout', makeOutListener(infowindow));
 
-            // 마커에 마우스아웃 이벤트를 등록합니다
-            kakao.maps.event.addListener(marker, 'mouseout', function() {
-              // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
-              infowindow.close();
-            });
+            // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+            function makeOverListener(map, marker, infowindow) {
+                return function () {
+                    infowindow.open(map, marker);
+                };
+            }
 
-            // 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
-            kakao.maps.event.addListener(marker, 'click', function () {
-                alert('마커를 클릭했습니다!');
-            });
+            // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+            function makeOutListener(infowindow) {
+                return function () {
+                    infowindow.close();
+                };
+            }
+
+
 
         }
 
