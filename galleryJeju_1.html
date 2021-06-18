@@ -12,48 +12,9 @@
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
       <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-
-      
       <style>
          .image{flex:auto;}
-
       </style>
-
-      
-
-            <!--https://blog.naver.com/reword12/221558090189-->
-      <script>
-         /*
-         $(document).ready(function(){
-            $.getJSON('제주생활방언.json', function(data){
-               var html = [];
-               $.each(data, function(i, item){
-                  for(var num = 0; num < item.users[num].length; num++){
-
-                     html.push('<div><img src="'+item.users[num].image1Url+'"></div>');
-                     html.push('<div>'+item.users[num].title+'</div>');
-                     html.push('<div>'+item.users[num].original+'</div>');
-                     html.push('<div>'+item.users[num].solution+'</div>');
-                     
-                     html.push('<div>');
-                     html.push('<dl>');
-                     html.push('<dt>'+item.users[num].title+'</dt>');
-                     html.push('<dd>'+item.users[num].original+'</dd>');
-                     html.push('<dd>'+item.users[num].solution+'</dd>');
-                     html.push('</dl>');
-                     html.push('</div>');
-                     
-                  }
-               });
-               console.log(html);
-               $('#data-container').html(html.join(''));
-            });
-         });
-         */
-
-
-      </script>
-
    </head>
 
 
@@ -93,9 +54,6 @@
                            <li><a href="quiztest.html">quiz</a></li>
                         </ul>
                      </li>
-                     <!--
-                     <li><a href="contact.html"><i class="icon-mail"></i>Contact</a></li>
-                     -->
                   </ul>
                   <div id="search" class="line" >
                      
@@ -108,34 +66,24 @@
                   <!-- HEADER -->     
                   <div class="line">
                      <section>
-                        <div class="margin" id="data-container"> <!-- 실행 문제? -->
-                           <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
-                           <!-- api 받은 뒤 내용 수정 -->
-                           
-                        
-                           <!--
-                           <div class="s-12 m-12 l-6 margin-bottom">
-                              <img class="full-img" src="img/gallery-1.svg" alt="">
-                           </div>
-                           -->
-
+                        <div class="margin" id="data-container">
                            <table> 
                               <thead> 
                                  <tr> 
-                                    <th>number</th> 
-                                    <th>name</th> 
+                                    <th style="width: 2%">num</th> 
+                                    <th style="width: 5%">name</th> 
                                     <th>contents</th> 
-                                    <th>image</th> 
+                                    <th style="width:  10%">image</th> 
                                  </tr> 
                               </thead> 
                               <tfoot> 
                                  <tr> 
-                                    <td>number</td> 
+                                    <td>num</td> 
                                     <td>name</td> 
                                     <td>contents</td> 
                                     <td>image</td> 
                                  </tr> 
-                              </tfoot> 
+                              </tfoot>
                               <tbody>
                                  <tr> 
                                     <td class="num"></td> 
@@ -145,9 +93,7 @@
                                  </tr> 
                               </tbody> 
                            </table>
-
                         </div>
-
                      </section>
                   </div>
                </div>
