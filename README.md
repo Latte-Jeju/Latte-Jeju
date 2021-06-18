@@ -16,20 +16,14 @@
 ### OPEN API,OPEN SOURCE
 
 - 제주 생활 방언: https://www.jeju.go.kr/help/open.htm?qType=title&q=B&act=view&seq=957915
-
 - 제주 속담 사전 :  https://www.jeju.go.kr/help/open.htm?qType=title&q=B&act=view&seq=957917
-
 - 제주 방언 사전 : https://www.jeju.go.kr/help/open.htm?qType=title&q=B
-
 - 제주 민요 정보: https://www.jeju.go.kr/help/open.htm?qType=title&q=C&act=view&seq=957921
-
 - 제주 삼다 문화 컨텐츠 :https://www.jeju.go.kr/help/open.htm?qType=title&q=C&act=view&seq=957922
-
 - 제주 디지털 컨텐츠 : https://www.jeju.go.kr/help/open.htm?qType=title&q=D
-
 - 무료 템플릿 : https://www.myresponsee.com/blog/
-
 - 무료 워드프레스 게시판 : https://github.com/project-for-opensourceclass/KBoard-wordpress-plugin
+- 카카오 맵 API : https://apis.map.kakao.com/
 
 -----
 ### MIT License
