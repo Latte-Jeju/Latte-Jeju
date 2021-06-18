@@ -45,9 +45,10 @@
                      <li>
                         <a><i class="icon-heart"></i>extra</a>
                         <ul>
-                           <li><a href="quiztest.html">quiz</a></li>
                            <li><a href="속담.html">속담</a></li>
-                           <li><a href="museum.html">Jeju-Map</a></li>   
+                           <li><a href="museum.html">Jeju-Map</a></li>
+                           <li><a href="imagecard.html">image card</a></li>
+                           <li><a href="quiztest.html">quiz</a></li>      
                         </ul>
                      </li>
                      <!--
@@ -72,6 +73,7 @@
                                     <td>number</td> 
                                     <td>name</td> 
                                     <td>contents</td> 
+                                    
                                  </tr> 
                               </thead>
                               <tfoot>
@@ -79,6 +81,7 @@
                                     <td>number</td> 
                                     <td>name</td> 
                                     <td>contents</td> 
+                                    
                                  </tr> 
                               </tfoot>
                               <tbody>
@@ -86,6 +89,7 @@
                                     <td class="num"></td>
                                     <td class="name"></td>
                                     <td class="contents"></td>
+                                    
                                  </tr>
                               </tbody>
                            </table>
@@ -111,7 +115,7 @@
       <script type="text/javascript" src="js/responsee.js"></script>
       <script>
          function test(callback){
-            $.getJSON("./제주생활방언.json", function(json) {
+            $.getJSON("./제주민요정보.json", function(json) {
                callback(json);
             });
          }
@@ -121,14 +125,18 @@
                let tr = document.createElement('tr'); 
                let tnum = document.createElement('td');
                let tname = document.createElement('td');
-               let tcontents = document.createElement('td'); 
-
+               let tcontents = document.createElement('td');
+               let taudio = document.createElement('audio');
+               
+               //<source src="voice.ogg" type="audio/ogg">
+               //soundUrl
                tnum.className="num"
                tname.className = 'name'
                tcontents.className ="contents"
                tnum.innerHTML = i;
                tname.innerHTML = json[0][i]["name"];
                tcontents.innerHTML=json[0][i]["contents"];
+               taudio.setAttribute("src","http://www.jeju.go.kr"+json[0][i]["soundUrl"]);
                
                tr.appendChild(tnum);
                tr.appendChild(tname);
