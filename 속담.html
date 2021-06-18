@@ -9,11 +9,12 @@
       <link rel="stylesheet" href="css/responsee.css">
       <!-- CUSTOM STYLE --> 
       <link rel="stylesheet" href="css/template-style.css"> 
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-      <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
-      <link rel="stylesheet" href="css/pure.css"> 
-      <script type="text/javascript" src="js/pure.js" defer></script>  
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>   
+      <link rel="stylesheet" type="text/css" href="css/typingstyle.css" />
+      <link rel="stylesheet" href="css/typingstyle.css">
+	 
    </head>
    <body class="size-1140 align-content-left">
       <div class="line">
@@ -32,7 +33,6 @@
                            <li><a href="galleryMin_1.html">삼다 문화</a></li>
                            <li><a href="galleryMin_2.html">제주 민요</a></li>
                            <li><a href="pure.html">제주 이미지</a></li>
-                           <li><a href="museum.html">박물관</a></li>
                         </ul>
                      </li>
                      <li>
@@ -69,43 +69,31 @@
                <div class="box">
                   <!-- HEADER -->     
                   <div class="line">
-                     
+                     <section>
                         <div class="margin">
                            <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
                            <!-- api 받은 뒤 내용 수정 -->
-                           <!-- 앱 세로 화면 기준으로 재배치-->
-                           <section>
-                              <div class="flex">
-                                 <div class="wrap">
-                                   <div class="card back"><p>사봉낙조</p></div>
-                                   <img class="card front" src=" http://www.jeju.go.kr/media/yQf">
-                                 </div>
-                              </div>
-                              <div class="flex">
-                                 <div class="wrap">
-                                   <img class="card front" src="http://www.jeju.go.kr/media/yQg">
-                                   <div class="card back"><p>한치잡이배</p></div>
-                                 </div>
-                              </div>
-
-                              <div class="flex">
-                                 <div class="wrap">
-                                   <div class="card back"><p>제주항일몰</p></div>
-                                   <img class="card front" src="	http://www.jeju.go.kr/media/yQh">
-                                 </div>
-                              </div>
-
-                           </section>
-                           
-                           <center><button onclick="forjson(3)">다음장</button></center>
+                           <div class="container">
+                            <div class="content">
+                                <h2 id="name">제주 속담연습하기!!!</h2>
+                                <img src="" class="logo" alt=""/>
+                                <div id="DWetype">밑에 버튼을 누르면 다음장으로 넘어갈수있어요!</div>
+                                <input type="text" id="typeBox" autofocus="" autocomplete="off" placeholder="스페이스바를 누르세요" />
+                                <center><button onclick="forjson(3)">다음장</button></center>
+                            </div>
+                            
+                        </div>
+                        
+                       
+                        
                            <!--
                            <div class="s-12 m-12 l-6 margin-bottom">
                               <img class="full-img" src="img/gallery-1.svg" alt="">
                            </div>
                            -->
-
+                           <script  src="js/typingscript.js"></script>
                         </div>
-                     
+                     </section>
                   </div>
                </div>
                <!-- FOOTER --> 
@@ -115,7 +103,7 @@
                         <p><br /></p>
                      </div>
                      <div class="s-12 l-6">
-                        <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework"></a>
+                        <a class="right" href="https://www.myresponsee.com" title="Responsee - lightweight responsive framework"></a>
                      </div>
                   </footer>
                </div>

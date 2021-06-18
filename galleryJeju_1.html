@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Free responsive blog template</title>
+      <title>Latte-Jeju</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/icons.css">
       <link rel="stylesheet" href="css/responsee.css">
@@ -11,8 +11,47 @@
       <link rel="stylesheet" href="css/template-style.css"> 
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+      
+      
+
+            <!--https://blog.naver.com/reword12/221558090189-->
+      <script>
+         /*
+         $(document).ready(function(){
+            $.getJSON('제주생활방언.json', function(data){
+               var html = [];
+               $.each(data, function(i, item){
+                  for(var num = 0; num < item.users[num].length; num++){
+
+                     html.push('<div><img src="'+item.users[num].image1Url+'"></div>');
+                     html.push('<div>'+item.users[num].title+'</div>');
+                     html.push('<div>'+item.users[num].original+'</div>');
+                     html.push('<div>'+item.users[num].solution+'</div>');
+                     
+                     html.push('<div>');
+                     html.push('<dl>');
+                     html.push('<dt>'+item.users[num].title+'</dt>');
+                     html.push('<dd>'+item.users[num].original+'</dd>');
+                     html.push('<dd>'+item.users[num].solution+'</dd>');
+                     html.push('</dl>');
+                     html.push('</div>');
+                     
+                  }
+               });
+               console.log(html);
+               $('#data-container').html(html.join(''));
+            });
+         });
+         */
+
+
+      </script>
+
    </head>
+
+
    <body class="size-1140 align-content-left">
       <div class="line">
          <div id="content-wrapper">
@@ -30,6 +69,7 @@
                            <li><a href="galleryMin_1.html">삼다 문화</a></li>
                            <li><a href="galleryMin_2.html">제주 민요</a></li>
                            <li><a href="pure.html">제주 이미지</a></li>
+                           <li><a href="museum.html">박물관</a></li>
                         </ul>
                      </li>
                      <li>
@@ -38,6 +78,18 @@
                            <li><a href="galleryJeju_1.html">생활 방언</a></li>
                            <li><a href="galleryJeju_2.html">방언 사전</a></li>
                            <li><a href="galleryJeju_3.html">제주 속담</a></li>
+                           
+                        </ul>
+                     </li>
+                     <li>
+                        <a><i class="icon-heart"></i>extra</a>
+                        <ul>
+                           <li><a href="quiztest.html">quiz</a></li>
+                           <li><a href="속담.html">속담</a></li>
+                           <li><a href="test.html">test</a></li>
+                           <li><a href="test2.html">test2</a></li>
+                           <li><a href="test3.html">test3</a></li>
+                           
                         </ul>
                      </li>
                      <!--
@@ -51,42 +103,50 @@
             </div>
             <!-- RIGHT COLUMN -->   
             <div class="s-12 m-8 l-9">
-               <div class="box">
+               <div class="box" >
                   <!-- HEADER -->     
                   <div class="line">
                      <section>
-                        <div class="margin">
+                        <div class="margin" id="data-container"> <!-- 실행 문제? -->
                            <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
                            <!-- api 받은 뒤 내용 수정 -->
                            
-                           <li>
-	                           <div class="col-md-4 col-xs-12"><img alt="정당모자 이미지" class="img-responsive mCenter" src="/media/rx"></div>
-	                           <div class="col-md-8 col-xs-12 text-justfy">
-	                              <dl class="cul-dl-st01">
-		                              <dt>정당모자 : 댕댕이 줄기로 만든 모자</dt>
-		                              <dd>야산에서 자생하는 댕댕이 줄기로 만든 모자로서 모자골은 사용자의 머리에 맞게 하고, 갓은 비교적 넓어서 해가림이 많이 되도록 하였다. 주로 목자나 농부들이 사용하였다.</dd>
-	                              </dl>
-	                           </div>
-	                        </li>
-
-                           <li>
-                              <div class="col-md-4 col-xs-12"><img alt="물옷이미지" class="img-responsive mCenter" src="/media/rc"></div>
-                              <div class="col-md-8 col-xs-12 text-justfy">
-                                 <dl class="cul-dl-st01">
-                                    <dt>물옷 : 제주 해녀들이 입던 옷</dt>
-                                    <dd>1970년대 초기 일본에서 검은 고무옷이 들어오기 이전에 제주해녀들이 입던 해녀옷이다. 해녀옷은 상의를 물적삼, 하의를 소중이, 머리에쓴 물수건을 포함한다. 해녀옷에는 제주여인의 근면성과 편리성과 합리성을 느낄 수 있다.<br>
-                                    <small>※ 해녀복 → 물옷 (민속연구원 김동섭)</small></dd>
-                                 </dl>
-                              </div>
-                           </li>
-                           
+                        
                            <!--
                            <div class="s-12 m-12 l-6 margin-bottom">
                               <img class="full-img" src="img/gallery-1.svg" alt="">
                            </div>
                            -->
 
+                           <table> 
+                              <thead> 
+                                 <tr> 
+                                    <th>number</th> 
+                                    <th>name</th> 
+                                    <th>contents</th> 
+                                    <th>image</th> 
+                                 </tr> 
+                              </thead> 
+                              <tfoot> 
+                                 <tr> 
+                                    <td>number</td> 
+                                    <td>name</td> 
+                                    <td>contents</td> 
+                                    <td>image</td> 
+                                 </tr> 
+                              </tfoot> 
+                              <tbody>
+                                 <tr> 
+                                    <td class="num"></td> 
+                                    <td class="name"></td> 
+                                    <td class="contents"></td> 
+                                    <td class="image"></td> 
+                                 </tr> 
+                              </tbody> 
+                           </table>
+
                         </div>
+
                      </section>
                   </div>
                </div>
@@ -94,10 +154,10 @@
                <div class="box footer">
                   <footer class="line">
                      <div class="s-12 l-6">
-                        <p>Copyright 2019, Vision Design - graphic zoo<br />The background image is purchased from Depositphotos. Do not use the image in your website.</p>
+                        <p><br /></p>
                      </div>
                      <div class="s-12 l-6">
-                        <a class="right" href="https://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+                        <a class="right" href="https://www.myresponsee.com" title="Responsee - lightweight responsive framework"></a>
                      </div>
                   </footer>
                </div>
@@ -106,5 +166,46 @@
       </div>
       <img id="background" class="hide-s" src="img/background.jpg" alt=""> 
       <script type="text/javascript" src="js/responsee.js"></script>  
+
+      <!--	json 연결 : https://cl0clam.tistory.com/3 -->
+      <script>
+         function test(callback){
+  $.getJSON("./제주자연사진.json", function(json) {
+    callback(json);
+  });
+}
+test(function (json){
+               for(i=0;i<10;i++) { 
+                  console.log(json[0][i])
+                  let tr = document.createElement('tr'); 
+                  let tnum = document.createElement('td');
+                  let tname = document.createElement('td');
+                  let tcontents = document.createElement('td'); 
+                  let timage = document.createElement('IMG'); 
+
+                  tnum.className="num"
+                  tname.className = 'name'
+                  tcontents.className ="contents"
+                  timage.className = "image"
+                  tnum.innerHTML = i;
+                  tname.innerHTML = json[0][i]["title"];
+                  tcontents.innerHTML=json[0][i]["contents"];
+                  //timage.innerHTML =json[0][i]["image"];
+
+                  
+                  timage.setAttribute("src","http://www.jeju.go.kr"+json[0][i]["dataImageUrl"]); // b에다가 image url 담을예정
+                  timage.setAttribute("width", "304");
+                  timage.setAttribute("height", "228");
+                  
+                  tr.appendChild(tnum);
+                  tr.appendChild(tname);
+                  tr.appendChild(tcontents);
+                  tr.appendChild(timage);
+   
+                  document.querySelector("tbody").appendChild(tr); 
+               } 
+            });
+          
+         </script>
    </body>
 </html>

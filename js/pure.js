@@ -12,7 +12,7 @@ var b=0;
 
   
 function test(callback){
-  $.getJSON("제주사진정보.json", function(json) {
+  $.getJSON("./제주자연사진.json", function(json) {
     callback(json);
   });
 }
@@ -24,8 +24,8 @@ function forjson(){
   
   $("section *").remove();
   // this will show the info it in firebug console
-  //var section = document.querySelector('section');
-  var margin = document.getElementsByClassName("margin");
+  var section = document.querySelector('section');
+  //var margin =document.getElementsByClassName('margin')
 
   classification={}
   for(var i=b; i<b+3;i++)
@@ -39,11 +39,11 @@ function forjson(){
     
   
     
-    
+   
     var kdiv = document.createElement('div');
     var frontdiv= document.createElement('IMG');
     var backdiv = document.createElement('div');
-    var section = document.createElement('section');
+    
       
   
     
@@ -55,11 +55,13 @@ function forjson(){
     frontdiv.setAttribute("height", "228");
     frontdiv.setAttribute("alt", "The Pulpit Rock");
     
+   
     section.className='flex'
     kdiv.className = 'wrap'
     frontdiv.className ="card front"
     backdiv.className = "card back"
-    margin.className='margin'
+   // section1.className='flex'
+    
     
     backdiv.textContent=a.title
     //backdiv.textContent=escapeHtml(a.contents)
@@ -71,7 +73,11 @@ function forjson(){
     kdiv.appendChild(backdiv);
     kdiv.appendChild(frontdiv);
     section.appendChild(kdiv);
-    margin.appendChild(section)
+    
+   // section1.appendChild(section);
+   
+   
+  
      
   };
 

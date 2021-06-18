@@ -7,13 +7,16 @@
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/icons.css">
       <link rel="stylesheet" href="css/responsee.css">
+      <link rel="stylesheet" href="css/quizstyle.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel='stylesheet' href='https://raw.githubusercontent.com/jchamill/jquery-quiz/master/src/jquery.quiz.css'><link rel="stylesheet" href="css/quizstyle.css">
       <!-- CUSTOM STYLE --> 
       <link rel="stylesheet" href="css/template-style.css"> 
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
       <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
-      <link rel="stylesheet" href="css/pure.css"> 
-      <script type="text/javascript" src="js/pure.js" defer></script>  
+       
+      
    </head>
    <body class="size-1140 align-content-left">
       <div class="line">
@@ -73,37 +76,18 @@
                         <div class="margin">
                            <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
                            <!-- api 받은 뒤 내용 수정 -->
-                           <!-- 앱 세로 화면 기준으로 재배치-->
-                           <section>
-                              <div class="flex">
-                                 <div class="wrap">
-                                   <div class="card back"><p>사봉낙조</p></div>
-                                   <img class="card front" src=" http://www.jeju.go.kr/media/yQf">
-                                 </div>
-                              </div>
-                              <div class="flex">
-                                 <div class="wrap">
-                                   <img class="card front" src="http://www.jeju.go.kr/media/yQg">
-                                   <div class="card back"><p>한치잡이배</p></div>
-                                 </div>
-                              </div>
-
-                              <div class="flex">
-                                 <div class="wrap">
-                                   <div class="card back"><p>제주항일몰</p></div>
-                                   <img class="card front" src="	http://www.jeju.go.kr/media/yQh">
-                                 </div>
-                              </div>
-
-                           </section>
-                           
-                           <center><button onclick="forjson(3)">다음장</button></center>
-                           <!--
-                           <div class="s-12 m-12 l-6 margin-bottom">
-                              <img class="full-img" src="img/gallery-1.svg" alt="">
-                           </div>
-                           -->
-
+                           <div id="quiz">
+                            <div id="quiz-header">
+                              <h2>제주 퀴즈 beta</h2>
+                              <p class="faded">제주를 얼마나 알고있나요??^^?^? </p>
+                            </div>
+                            <div id="quiz-start-screen">
+                              <p><a href="#" id="quiz-start-btn" class="quiz-button">Start</a></p>
+                            </div>
+                            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                            <script src='https://jchamill.github.io/jquery-quiz/jquery.quiz-min.js'></script><script  src="js/quizscript.js"></script>
+                            
+                        </div>
                         </div>
                      
                   </div>

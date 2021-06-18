@@ -16,7 +16,7 @@ body{
   }
   
   .card {
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     position: absolute;
     width: 240px;
     height: 360px;
