@@ -12,6 +12,7 @@
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
       <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<<<<<<< HEAD
 
       
       <style>
@@ -112,6 +113,11 @@
                   <!-- HEADER -->     
                   <div class="line">
                      <section>
+
+                        <div class="margin">
+                           <table>
+                              <thead>
+
                         <div class="margin" id="data-container"> <!-- 실행 문제? -->
                            <!--https://www.jeju.go.kr/culture/folklore/life/clothes.htm-->
                            <!-- api 받은 뒤 내용 수정 -->
@@ -125,20 +131,32 @@
 
                            <table> 
                               <thead> 
-                                 <tr> 
-                                    <th>number</th> 
-                                    <th>name</th> 
-                                    <th>contents</th> 
-                                    <th>image</th> 
-                                 </tr> 
-                              </thead> 
-                              <tfoot> 
+
                                  <tr> 
                                     <td>number</td> 
                                     <td>name</td> 
                                     <td>contents</td> 
                                     <td>image</td> 
                                  </tr> 
+                              </thead>
+                              <tfoot>
+                                 <tr> 
+                                    <td>number</td> 
+                                    <td>name</td> 
+                                    <td>contents</td> 
+                                    <td>image</td> 
+                                 </tr> 
+
+                              </tfoot>
+                              <tbody>
+                                 <tr>
+                                    <td class="num"></td>
+                                    <td class="name"></td>
+                                    <td class="contents"></td>
+                                    <td class="image"></td>
+                                 </tr>
+                              </tbody>
+
                               </tfoot> 
                               <tbody>
                                  <tr> 
@@ -148,10 +166,9 @@
                                     <td class="iagme"></td> 
                                  </tr> 
                               </tbody> 
+
                            </table>
-
                         </div>
-
                      </section>
                   </div>
                </div>
@@ -171,10 +188,45 @@
       </div>
       <img id="background" class="hide-s" src="img/background.jpg" alt=""> 
       <script type="text/javascript" src="js/responsee.js"></script>  
-
-      <!--	json 연결 : https://cl0clam.tistory.com/3 -->
       <script>
          function test(callback){
+
+            $.getJSON("./제주생활방언.json", function(json) {
+               callback(json);
+            });
+         }
+         test(function (json){
+            for(i=0;i<10;i++) { 
+               console.log(json[0][i])
+               let tr = document.createElement('tr'); 
+               let tnum = document.createElement('td');
+               let tname = document.createElement('td');
+               let tcontents = document.createElement('td'); 
+               let timage = document.createElement('IMG'); 
+
+               tnum.className="num"
+               tname.className = 'name'
+               tcontents.className ="contents"
+               timage.className = "image"
+               tnum.innerHTML = i;
+               tname.innerHTML = json[0][i]["name"];
+               tcontents.innerHTML=json[0][i]["contents"];
+               //timage.innerHTML =json[0][i]["image"];
+
+               timage.setAttribute("src","http://www.jeju.go.kr"+json[0][i]["image1Url"]); // b에다가 image url 담을예정
+               timage.setAttribute("width", "304");
+               timage.setAttribute("height", "228");
+                  
+               tr.appendChild(tnum);
+               tr.appendChild(tname);
+               tr.appendChild(tcontents);
+               tr.appendChild(timage);
+   
+               document.querySelector("tbody").appendChild(tr); 
+            } 
+         });
+      </script>
+
   $.getJSON("./제주자연사진.json", function(json) {
     callback(json);
   });
@@ -212,5 +264,6 @@ test(function (json){
             });
           
          </script>
+
    </body>
 </html>
